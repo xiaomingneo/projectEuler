@@ -21,7 +21,7 @@ findIt=False
 for x in palinNumbers:
     for y in range(999,100,-1):
         if x%y==0 and x/y>100 and x/y<1000:
-            print('%s = %s * %s'%(x,y,x//y))
+            print('%s = %s x %s'%(x,y,x//y))
             findIt=True
             break
     if findIt:
