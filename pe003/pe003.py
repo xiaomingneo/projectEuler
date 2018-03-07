@@ -24,14 +24,16 @@ def primes():
         if isprime(x):
             yield x
         
-print(isprime(10086647))
-N = 600851475143
+N0 = 600851475143
+N = N0
+facts=set()
 for a in primes():
     while N%a==0:
         N=N//a
+        facts.add(a)
     if isprime(N):
-        print('==========')
-        print(N)
-        print(isprime(10086647))
+        facts.add(N)
+        
         break
-    print('%s-->%s'%(a,N))
+print(facts)
+print(max(facts))
