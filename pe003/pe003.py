@@ -24,14 +24,17 @@ def primes():
         if isprime(x):
             yield x
         
-print(isprime(10086647))
-N = 600851475143
+
+N0 = 600851475143
+N=N0
+factors=set()   #N0 的素因子集合
 for a in primes():
     while N%a==0:
         N=N//a
+        factors.add(a)
+
     if isprime(N):
-        print('==========')
-        print(N)
-        print(isprime(10086647))
+        factors.add(N)
+        print('%s = %s'%(N0,'x'.join([str(x) for x in sorted(list(factors))])))
         break
-    print('%s-->%s'%(a,N))
+    
